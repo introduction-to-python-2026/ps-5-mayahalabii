@@ -1,18 +1,21 @@
 def split_before_uppercases(formula):
-    # Handle empty string
     if formula == "":
         return []
 
-    start = 0
-    end = 1
-    split_formula = []
+    parts = []
+    current = ""
 
-    # Loop through characters starting at index 1
-    for ch in formula[1:]:
-        if ch.isupper():
-            split_formula.append(formula[start:end])
-            start = end
-        end += 1
+    for ch in formula:
+        if ch.isupper() and current:
+            parts.append(current)
+            current = ch
+        else:
+            current += ch
+
+    if current:
+        parts.append(current)
+
+    return parts
 
     # Append the final section
     split_formula.append(formula[start:end])
