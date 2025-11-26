@@ -26,16 +26,16 @@ def split_before_uppercases(formula):
 def split_at_digit(formula):
     digit_location = 1
     for char in formula[1:]:
-      if char.isdigit():
-        break
-      digit_location += 1
-    
+        if char.isdigit():
+            break
+        digit_location += 1
+
     if digit_location == len(formula):
-      return formula, 1
+        return formula, 1
     else:
-      prefix = formula[:digit_location]
-      number = int(formula[digit_location:])
-      return prefix, number
+        prefix = formula[:digit_location]
+        number = int(formula[digit_location:])
+        return prefix, number
 
 
 def count_atoms_in_molecule(molecular_formula):
