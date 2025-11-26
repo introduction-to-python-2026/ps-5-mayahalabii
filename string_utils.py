@@ -1,5 +1,3 @@
-
-
 def split_before_uppercases(formula):
     # Handle empty string
     if formula == "":
